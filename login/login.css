@@ -1,12 +1,135 @@
 body{
-    padding:50px;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #b5a894;
+    font-family: '';
+    
 }
-.container{
-    max-width: 600px;
-    margin:0 auto;
-    padding:50px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
 }
-.form-group{
-    margin-bottom:30px;
+
+/* navbar */
+.navbar {
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 100px; /* Adjust this value as needed */
 }
+.logo {
+    width: 100px;
+    height: 100px;
+}
+.navbar ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+.navbar ul li a {
+    text-decoration: none;
+    color: #6b5f57;
+    text-transform: uppercase;
+}
+.navbar ul li::after {
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #6b5f57;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+.navbar ul li:hover::after {
+    width: 100%;
+}
+
+main {
+    margin-left: 15%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+main p, 
+main h3{
+    border: solid 2px #6b5f57;
+    padding: 5px;
+}
+.main-text{
+    border-bottom: solid 2vh #6b5f57;
+    color: #6b5f57;
+}
+main ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1px;
+    text-align: center;
+}
+
+
+footer{
+    margin-top: 30%;
+    background-color: #6b5f57;
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer-list{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 15px;
+    justify-content: center;
+}
+
+footer a{
+    text-decoration: none;
+    color: black;
+    
+}
+
+footer a:hover{
+    text-decoration: underline;
+}
+
+footer p{
+    display: flex;
+    justify-content: center;
+}
+
+
+/* footer{
+    
+    
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #111;
+    height: auto;
+   
+    color: #fff;
+} */
+/* .footer-div ,.footer-bottom{
+    display: grid;
+    justify-items: center;
+} */
+
+
+
+
+
+
+
+
+

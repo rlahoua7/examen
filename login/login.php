@@ -11,6 +11,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
     $password = $_POST["wachtwoord"];
 
+    // echo($password);
+
     // Haal gebruikersgegevens op uit de database
     $sql = "SELECT * FROM gebruiker WHERE email = :email";
     $stmt = $conn->prepare($sql);
@@ -18,13 +20,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->execute();
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
+    // var_dump(password_verify($password, $user["wachtwoord"]));
+
     //checkt of de gegevens overeenkomen met die van de database
     // Controleer of het wachtwoord overeenkomt
-    if ($user && password_verify($password, $user["wachtwoord"])) {
+    if (password_verify($password, $user["wachtwoord"])) {
         // Inloggen gelukt, sla gebruikersgegevens op in sessie
         $_SESSION["user_id"] = $user["id"];
         $_SESSION["user_email"] = $user["email"];
-        header("Location: index.html"); // Stuur gebruiker naar welkomstpagina of een andere beveiligde pagina
+        header("Location: ../session.html"); // Stuur gebruiker naar welkomstpagina of een andere beveiligde pagina
         exit();
     } else {
         // Inloggen mislukt, toon foutmelding

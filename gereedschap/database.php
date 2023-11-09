@@ -26,4 +26,3 @@ function getData($sql, $method){
     }
     return $result;
 }
-
