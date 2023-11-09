@@ -70,6 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($stmt->execute()) {
             echo "Registratie succesvol!";
+            header("refresh: 2; url=../index.php");
         } else {
             echo "Fout bij registratie: " . $stmt->errorInfo()[2]; // Geeft de specifieke foutmelding van PDO terug
         }

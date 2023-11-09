@@ -1,6 +1,3 @@
-<?php
-include('session.php');
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,10 +11,11 @@ include('session.php');
         <div class="navbar">
             <img src="images/logo.png" class="logo">
             <ul>
-                <li><a href="paketten.html">Paketten</a></li>
-                <li><a href="overons.html">Over ons</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="uitloggen/uitloggen.php">uitloggen</a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="login/index.php">Inloggen</a></li>
+                <li><a href="registreren/index.php">Registreren</a></li>
+                <li><a href="overons.php">Over ons</a></li>
+                <li><a href="contact.php">contact</a></li>
 
             </ul>
         </div>
@@ -31,7 +29,7 @@ include('session.php');
             <ul class="footer-list">
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="overons.html">over ons</i></a></li>
-                <li><a href="help.php">hulp</a></li>
+                <li><a href="#">hulp</a></li>
             </ul>
             <p>copyright &copy;2023 Rijsschool A naar B. designed by <span>Rayan Lahoua</span></p>
     </footer>

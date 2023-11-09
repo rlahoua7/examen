@@ -27,10 +27,10 @@
             <div class="navbar">
                 <img src="../images/logo.png" class="logo">
                 <ul>
-                    <li><a href="../index.html">home</a></li>
+                    <li><a href="../index.php">home</a></li>
                     <li><a href="../login/index.php">Inloggen</a></li>
-                    <li><a href="../overons.html">Over ons</a></li>
-                    <li><a href="../contact.html">Contact</a></li>
+                    <li><a href="../overons.php">Over ons</a></li>
+                    <li><a href="../contact.php">Contact</a></li>
 
                 </ul>
             </div>
@@ -65,6 +65,5 @@
 </body>
 
 </html>
-
 
 
