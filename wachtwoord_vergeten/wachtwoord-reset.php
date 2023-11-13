@@ -2,18 +2,19 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require 'vendor/autoload.php';
+require '../vendor/autoload.php';
 
 $email = $_POST["email"];
 $token = bin2hex(random_bytes(16));
 $token_hash = hash("sha256", $token);
 $expiry = date("Y-m-d H:i:s", time() + 60 * 30); //
-$database = require __DIR__ . "../gereedschap/database.php";
+$database = require __DIR__ . "../../gereedschap/database.php";
 $sql = "UPDATE gebruiker
         SET reset_token_hash = ?,
             reset_token_expires_at = ?
         WHERE email = ?";
 $stmt = $database->prepare($sql);
+
 
 $stmt->bind_param("sss", $token_hash, $expiry, $email);
 if ($stmt->execute()) {
@@ -36,7 +37,9 @@ if ($stmt->execute()) {
         // Content
         $mail->isHTML(true);
         $mail->Subject = 'Password Reset Instructions';
-        $mail->Body    = "<p>Your password reset token is: $token</p>";
+        $mail->Body    ="<a href='http://localhost/examen/wachtwoord_vergeten/nieuw_wachtwoord.php?token=$token'>here</a> 
+        to reset your password.";
+    
  
         $mail->send();
         echo 'E-mail reset instructions have been sent!';
