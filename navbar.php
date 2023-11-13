@@ -1,23 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+                <?php 
+                         session_start();
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-    <?php include('navbar.php'); ?>
-
-    <main>
-        <!-- Rest of your HTML content -->
-    </main>
-
-    <footer>
-        <!-- Your footer content -->
-    </footer>
-</body>
-
-</html>
+                         if(isset($_SESSION['user_name'])){
+                            $gebruikersnaam = $_SESSION["user_name"];
+                            echo "<li>Hallo, $gebruikersnaam </li>";
+                            echo "<li><a href='paketten.php'>Paketten</a></li>";
+                            echo "<li><a href='uitloggen/uitloggen.php'>uitloggen</a></li>";
+                            echo "<li><a href='wachtwoord-vergeten.php'>wachtwoordvergeten</a></li>";
+                         }else{
+                            echo "<li><a href='login/index.php'>Inloggen</a></li>";
+                            echo "<li><a href='registreren/index.php'>Registreren</a></li>";
+                         }
+                        
+                    ?>
+    

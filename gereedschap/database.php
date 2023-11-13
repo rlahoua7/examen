@@ -5,6 +5,10 @@ $username = "root";
 $password = "";
 $dbname = "rijsschool";
 
+
+
+
+
 try {
  $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -26,3 +30,12 @@ function getData($sql, $method){
     }
     return $result;
 }
+
+//wachtwoordvergeten
+$mysqli = new mysqli($servername, $username, $password, $dbname);
+
+if ($mysqli->connect_error) {
+    die("Verbinding mislukt: " . $mysqli->connect_error);
+}
+
+return $mysqli;

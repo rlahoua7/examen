@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
     <html lang="en">
 
@@ -13,18 +14,7 @@
             <div class="navbar">
                 <img src="images/logo.png" class="logo">
                 <ul>
-                    <?php 
-                         session_start();
-
-                         if(isset($_SESSION['user_name'])){
-                            $gebruikersnaam = $_SESSION["user_name"];
-                            echo "<li>Hallo, $gebruikersnaam </li>";
-                         }else{
-                            echo "<li><a href='login/index.php'>Inloggen</a></li>";
-                            echo "<li><a href='registreren/index.php'>Registreren</a></li>";
-                         }
-                        
-                    ?>
+                    <?php include('navbar.php');?>
                     <li><a href="#">paketten</a></li>
                     <li><a href="overons.html">Over ons</a></li>
                     <li><a href="contact.html">Contact</a></li>

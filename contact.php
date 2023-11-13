@@ -13,9 +13,9 @@
         <div class="navbar">
             <img src="images/logo.png" class="logo">
             <ul>
+                <?php include('navbar.php');?>
                 <li><a href="index.php">Home</a></li>
-                <li><a href="login/index.php">Inloggen</a></li>
-                <li><a href="registreren/index.php">Registreren</a></li>
+                <li><a href="paketten.html">Paketten</a></li>
                 <li><a href="overons.php">Over ons</a></li>
             </ul>
         </div>

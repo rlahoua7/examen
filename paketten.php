@@ -11,10 +11,16 @@
         <div class="navbar">
             <img src="images/logo.png" class="logo">
             <ul>
-                <li><a href="session.html">Home</a></li>
-                <li><a href="paketten.html">Paketten</a></li>
-                <li><a href="overons.html">Over ons</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <?php
+                session_start();
+                if(isset($_SESSION['user_name'])){
+                    $gebruikersnaam = $_SESSION["user_name"];
+                    echo "<li>Hallo, $gebruikersnaam </li>";
+                }
+                ?>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="overons.php">Over ons</a></li>
+                <li><a href="contact.php">Contact</a></li>
                 <li><a href="../uitloggen/uitloggen.php">uitloggen</a></li>
 
 
@@ -51,9 +57,9 @@
     </main>
     <footer>
             <ul class="footer-list">
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="overons.html">over ons</i></a></li>
-                <li><a href="#">hulp</a></li>
+                <li><a href="contact.php">Contact</a></li>
+                <li><a href="overons.php">over ons</i></a></li>
+                <li><a href="help.php">hulp</a></li>
             </ul>
             <p>copyright &copy;2023 Rijsschool A naar B. designed by <span>Rayan Lahoua</span></p>
     </footer>
