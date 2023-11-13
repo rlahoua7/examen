@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $wachtwoord = password_hash($_POST['wachtwoord'], PASSWORD_DEFAULT);
     $telefoon = $_POST['telefoon'];
-    $rol = 1;
+    
 
     $emailNum = "SELECT * FROM gebruiker WHERE email = '$email'";
 
@@ -53,29 +53,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("location: index.php");
     }
 
-    
-
-    try {
-        // Gebruik de PDO-verbinding uit de database.php-file
-        $sql = "INSERT INTO gebruiker (naam, achternaam, email, wachtwoord, telefoon, rol) 
-        VALUES (:naam, :achternaam, :email, :wachtwoord, :telefoon, :rol)";
-
-        $stmt = $conn->prepare($sql); // $conn is de PDO-verbinding uit de database.php-file
-        $stmt->bindParam(':naam', $naam);
-        $stmt->bindParam(':achternaam', $achternaam);
-        $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':wachtwoord', $wachtwoord);
-        $stmt->bindParam(':telefoon', $telefoon);
-        $stmt->bindParam(':rol', $rol);
-
         if ($stmt->execute()) {
-            echo "Registratie succesvol!";
+            try {
+                // Gebruik de PDO-verbinding uit de database.php-file
+                $sql = "INSERT INTO gebruiker (naam, achternaam, email, wachtwoord, telefoon) 
+                VALUES (:naam, :achternaam, :email, :wachtwoord, :telefoon)";
+        
+                $stmt = $conn->prepare($sql); // $conn is de PDO-verbinding uit de database.php-file
+                $stmt->bindParam(':naam', $naam);
+                $stmt->bindParam(':achternaam', $achternaam);
+                $stmt->bindParam(':email', $email);
+                $stmt->bindParam(':wachtwoord', $wachtwoord);
+                $stmt->bindParam(':telefoon', $telefoon);
+                echo "Registratie succesvol!";
+            }catch (PDOException $e) {
+                echo "Fout bij registratie: " . $e->getMessage(); // Geeft de algemene foutmelding van PDO terug. catch zet je achter try 
+            }
             header("refresh: 2; url=../index.php");
         } else {
             echo "Fout bij registratie: " . $stmt->errorInfo()[2]; // Geeft de specifieke foutmelding van PDO terug
         }
-    } catch (PDOException $e) {
-        echo "Fout bij registratie: " . $e->getMessage(); // Geeft de algemene foutmelding van PDO terug. catch zet je achter try 
-    }
+  
 }
 ?>
