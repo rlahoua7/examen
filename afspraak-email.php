@@ -1,10 +1,10 @@
 <?php
-include('../gereedschap/database.php');
+include('gereedschap/database.php');
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require '../vendor/autoload.php';
+require 'vendor/autoload.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "Fout bij registratie: " . $stmt->errorInfo()[2]; // Geeft de specifieke foutmelding van PDO terug
         }
 
-        header("refresh: 2; url=../index.php");
+        header("refresh: 2; url=afspraak.php");
     } catch (PDOException $e) {
         echo "Fout bij registratie: " . $e->getMessage();
     }

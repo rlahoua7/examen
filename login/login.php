@@ -20,8 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->execute();
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    // var_dump($user["naam"], $user["email"]);
-
+    var_dump($user["naam"], $user["email"]);
     //checkt of de gegevens overeenkomen met die van de database
     // Controleer of het wachtwoord overeenkomt
     if (password_verify($password, $user["wachtwoord"])) {

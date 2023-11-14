@@ -6,7 +6,7 @@
                echo "<li>Hallo, $gebruikersnaam </li>";
                echo "<li><a href='uitloggen/uitloggen.php'>uitloggen</a></li>";
                echo "<li><a href='paketten.php'>Paketten</a></li>";
-               echo "<li><a href='afspraak/index.php'>afspraak</a></li>";
+               echo "<li><a href='afspraak.php'>afspraak</a></li>";
          }else{
                echo "<li><a href='login/index.php'>Inloggen</a></li>";
                echo "<li><a href='registreren/index.php'>Registreren</a></li>";
