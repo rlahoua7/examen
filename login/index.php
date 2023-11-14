@@ -10,17 +10,18 @@
     <link rel="stylesheet" href="login.css">
 </head>
 <nav>
-            <div class="navbar">
-                <img src="../images/logo.png" class="logo">
-                <ul>
-                    <li><a href="../index.php">Home</a></li>
-                    <li><a href="../registreren/index.php">Registreren</a></li>
-                    <li><a href="../overons.php">Over ons</a></li>
-                    <li><a href="../contact.php">Contact</a></li>
+    <div class="navbar">
+        <img src="../images/logo.png" class="logo">
+        <ul>
+            <li><a href="../index.php">Home</a></li>
+            <li><a href="../registreren/index.php">Registreren</a></li>
+            <li><a href="../overons.php">Over ons</a></li>
+            <li><a href="../contact.php">Contact</a></li>
 
-                </ul>
-            </div>
-        </nav>
+        </ul>
+    </div>
+</nav>
+
 <body>
     <div class="container">
         <form action="login.php" method="post">
@@ -34,6 +35,7 @@
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="login" name="submit">
             </div>
+            <a href="../wachtwoord_vergeten/wachtwoord-vergeten.php">wachtwoord vergeten?</a>
         </form>
     </div>
 </body>

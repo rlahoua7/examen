@@ -1,37 +1,3 @@
-<!-- <?php
-// include('../gereedschap/database.php');
-
-// if ($_SERVER["REQUEST_METHOD"] == "POST") {
-//     $naam = $_POST['naam'];
-//     $achternaam = $_POST['achternaam'];
-//     $email = $_POST['email'];
-//     $wachtwoord = password_hash($_POST['wachtwoord'], PASSWORD_DEFAULT);
-//     $telefoon = $_POST['telefoon'];
-//     $rol = 1;
-// }   
-//     try {
-//         $pdo = new PDO('mysql:host=localhost;dbname=database_name', 'gebruikersnaam', 'wachtwoord');
-//         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-//     $sql = "INSERT INTO gebruiker (naam, achternaam, email, wachtwoord, telefoon, rol) 
-//     VALUES ('$naam', '$achternaam','$email', '$wachtwoord','$telefoon','$rol')";
-     
-        
-
-//     if ($conn->query($sql) === TRUE) {
-//         echo "Registratie succesvol!";
-//     } else {
-//         echo "Fout bij registratie: " . $conn->error;
-//     }
-// }
-
-// $conn->close();
-// ?> -->
-
-
-
-
-<!--juiste code!-->
 <?php
 include('../gereedschap/database.php');
 
