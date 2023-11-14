@@ -73,7 +73,9 @@ main ul{
     align-items: center;
     gap: 1px;
     text-align: center;
+    
 }
+
 
 
 footer{
@@ -107,6 +109,7 @@ footer p{
     display: flex;
     justify-content: center;
 }
+
 
 
 /* footer{

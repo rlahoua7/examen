@@ -2,11 +2,11 @@
 
 include('../gereedschap/database.php');
 
-$token = $_GET["token"];
+$token = $_GET["token"]; // token wordt uit de url gehaald
 
 $token_hash = hash("sha256", $token);
         
-$userSql = "SELECT * FROM gebruiker WHERE reset_token_hash = '$token_hash'";
+$userSql = "SELECT * FROM gebruiker WHERE reset_token_hash = '$token_hash'"; //zoekt welke gebruiker bij de token hoort
 
 $user = getData($userSql, 'fetch');
 

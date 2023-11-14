@@ -53,6 +53,27 @@
                 <p>€2.350</p>
                 <p>€2.580</p>
             </div>
+            <div class=list-incl-ex-TTT>
+                <h3>Incl-ex + TTT</h3>
+                <p>€1.610</p>
+                <p>€2.105</p>
+                <p>€2.350</p>
+                <p>€2.580</p>
+            </div>
+            <div class=list-incl-ex-TTT>
+                <h3>Incl-ex + TTT</h3>
+                <p>€1.610</p>
+                <p>€2.105</p>
+                <p>€2.350</p>
+                <p>€2.580</p>
+            </div>
+            <div class=list-incl-ex-TTT>
+                <h3>Incl-ex + TTT</h3>
+                <p>€1.610</p>
+                <p>€2.105</p>
+                <p>€2.350</p>
+                <p>€2.580</p>
+            </div>
         </ul>
     </main>
     <footer>
