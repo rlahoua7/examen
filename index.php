@@ -14,8 +14,7 @@
         
     </head>
 
-    <body>
-        
+    <body>     
         <nav>
             <div class="navbar">
                 <img src="images/logo.png" class="logo">
@@ -23,8 +22,6 @@
                 <?php include('navbar.php');?>
                     <li><a href="overons.php">Over ons</a></li>
                     <li><a href="contact.php">Contact</a></li>
-                    
-
                 </ul>
             </div>
         </nav>

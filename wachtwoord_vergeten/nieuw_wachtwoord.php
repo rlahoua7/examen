@@ -4,19 +4,16 @@ include('../gereedschap/database.php');
 
 $token = $_GET["token"]; // token wordt uit de url gehaald
 
-$token_hash = hash("sha256", $token);
+$token_hash = hash("sha256", $token); // waarde token wordt gehasht
         
 $userSql = "SELECT * FROM gebruiker WHERE reset_token_hash = '$token_hash'"; //zoekt welke gebruiker bij de token hoort
 
-$user = getData($userSql, 'fetch');
+$user = getData($userSql, 'fetch'); //getdata word gerbuikt om de resultaten van de sql query op te halen. de parameter 'fetch' geeft aan dat de resultaten als een associtive array moeten worden opgehaald
 
 if ($user === null) {
-    die("token not found");
+    die("token not found"); //als er geen overeenkomende gebruiker word gevonden krijg je foutmelding
 }
 
-// if (strtotime($user["reset_token_expires_at"]) <= time()) {
-//     die("token has expired");
-// }
 
 ?>
 <!DOCTYPE html>
@@ -34,7 +31,7 @@ if ($user === null) {
 
     <form method="post" action="process-reset-wachtwoord.php">
 
-        <input type="hidden" name="token" value="<?= htmlspecialchars($token) ?>">
+        <input type="hidden" name="token" value="<?= htmlspecialchars($token) ?>">  <!--verborgen veld bevat de geshate token voor het indentificeren van de gebruiker bij het verwerken van de formulier-->
 
         <label for="password">New password</label>
         <input type="password" id="password" name="password">

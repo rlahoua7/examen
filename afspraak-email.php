@@ -8,7 +8,7 @@ require 'vendor/autoload.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
-    $nummer = $_POST['number'];
+    $nummer = $_POST['number']; //haalt de waarde van ingevoerde gegvens van form
     $date = $_POST['date'];
     $text = $_POST['text'];
 
@@ -17,21 +17,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $sql = "INSERT INTO afspraak (email, number, date, text) 
                 VALUES (:email, :number, :date, :text)";
 
-        $stmt = $conn->prepare($sql); // $conn is de PDO-verbinding uit de database.php-file
+        $stmt = $conn->prepare($sql); 
         $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':number', $nummer); // Corrected variable name to $nummer
+        $stmt->bindParam(':number', $nummer);//bindparam voorkomt sql-injectie
         $stmt->bindParam(':date', $date);
         $stmt->bindParam(':text', $text);
 
         if ($stmt->execute()) {
-            echo "Registratie succesvol!";
+            echo "Succesvol versuurd!";
         } else {
-            echo "Fout bij registratie: " . $stmt->errorInfo()[2]; // Geeft de specifieke foutmelding van PDO terug
+            echo "Fout opgetreden: " . $stmt->errorInfo()[2]; // Geeft de specifieke foutmelding van PDO terug
         }
 
         header("refresh: 2; url=afspraak.php");
     } catch (PDOException $e) {
-        echo "Fout bij registratie: " . $e->getMessage();
+        echo "Fout opgetreden: " . $e->getMessage();
     }
 
     try {
@@ -43,8 +43,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->Host = 'smtp.mailtrap.io';
         $mail->SMTPAuth = true;
         $mail->Port = 2525;
-        $mail->Username = 'b194d2521afbbf'; // Replace with your Mailtrap username
-        $mail->Password = '8d0acdb6c1a21b'; // Replace with your Mailtrap password
+        $mail->Username = 'b194d2521afbbf'; 
+        $mail->Password = '8d0acdb6c1a21b'; 
 
         // Recipients
         $mail->setFrom('rijschoolanaarb@outlook.com', 'Your Name');

@@ -2,7 +2,7 @@
 include('../gereedschap/database.php');
 
 
-//
+
 session_start();
 
 // Controleer of het formulier is ingediend
@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
     $password = $_POST["wachtwoord"];
 
-    // echo($password);
+    
 
     // Haal gebruikersgegevens op uit de database
     $sql = "SELECT naam , email, wachtwoord FROM gebruiker WHERE email = :email";
@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->execute();
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    var_dump($user["naam"], $user["email"]);
+   // var_dump($user["naam"], $user["email"]);
     //checkt of de gegevens overeenkomen met die van de database
     // Controleer of het wachtwoord overeenkomt
     if (password_verify($password, $user["wachtwoord"])) {

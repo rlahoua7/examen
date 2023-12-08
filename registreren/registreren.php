@@ -1,7 +1,8 @@
 <?php
 include('../gereedschap/database.php');
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {  
     $naam = $_POST['naam'];
     $achternaam = $_POST['achternaam'];
     $email = $_POST['email'];
@@ -9,8 +10,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $telefoon = $_POST['telefoon'];
 
     // Controleer of e-mail al in gebruik is
-    $emailNum = "SELECT * FROM gebruiker WHERE email = '$email'";
-    $getEmailNum = getData($emailNum, 'fetch');
+    $emailNum = "SELECT * FROM gebruiker WHERE email = '$email'"; 
+    $getEmailNum = getData($emailNum, 'fetch'); 
 
     if ($getEmailNum > 1){
         session_start();
@@ -22,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $sql = "INSERT INTO gebruiker (naam, achternaam, email, wachtwoord, telefoon) 
                     VALUES (:naam, :achternaam, :email, :wachtwoord, :telefoon)";
     
-            $stmt = $conn->prepare($sql); // $conn is de PDO-verbinding uit de database.php-file
+            $stmt = $conn->prepare($sql); 
             $stmt->bindParam(':naam', $naam);
             $stmt->bindParam(':achternaam', $achternaam);
             $stmt->bindParam(':email', $email);
@@ -36,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo "Fout bij registratie: " . $stmt->errorInfo()[2]; // Geeft de specifieke foutmelding van PDO terug
             }
         } catch (PDOException $e) {
-            echo "Fout bij registratie: " . $e->getMessage(); // Geeft de algemene foutmelding van PDO terug. catch zet je achter try 
+            echo "Fout bij registratie: " . $e->getMessage(); // Geeft de algemene foutmelding van PDO terug. 
         }
     }
 }

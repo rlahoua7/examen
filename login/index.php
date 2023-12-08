@@ -10,17 +10,17 @@
     <link rel="stylesheet" href="login.css">
 </head>
 <nav>
-            <div class="navbar">
-                <img src="../images/logo.png" class="logo">
-                <ul>
-                    <li><a href="../index.php">Home</a></li>
-                    <li><a href="../registreren/index.php">Registreren</a></li>
-                    <li><a href="../overons.php">Over ons</a></li>
-                    <li><a href="../contact.php">Contact</a></li>
+    <div class="navbar">
+        <img src="../images/logo.png" class="logo">
+        <ul>
+            <li><a href="../index.php">Home</a></li>
+            <li><a href="../registreren/index.php">Registreren</a></li>
+            <li><a href="../overons.php">Over ons</a></li>
+            <li><a href="../contact.php">Contact</a></li>
 
-                </ul>
-            </div>
-        </nav>
+        </ul>
+    </div>
+</nav>
 
 <body>
     <div class="container">

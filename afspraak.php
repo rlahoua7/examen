@@ -6,18 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <p style="background-image: url('images/achtergrond.png');">
-    
-    <link rel="stylesheet" href="style.css">
+
+        <link rel="stylesheet" href="style.css">
 </head>
 
 <nav>
     <div class="navbar">
         <img src="images/logo.png" class="logo">
         <ul>
-        <?php include('navbar.php');?>
+            <?php include('navbar.php');?>
             <li><a href="overons.php">Over ons</a></li>
             <li><a href="contact.php">Contact</a></li>
-            
+
 
         </ul>
     </div>
@@ -39,7 +39,7 @@
         <div class="form-group">
             <input type="date" class="form-control" name="date" placeholder="date">
         </div>
-        
+
         <div class="form-group">
             <input type="text" class="form-control" name="text" placeholder="bericht">
         </div>
@@ -58,4 +58,5 @@
     </ul>
     <p>copyright &copy;2023 Rijsschool A naar B. designed by <span>Rayan Lahoua</span></p>
 </footer>
+
 </html>

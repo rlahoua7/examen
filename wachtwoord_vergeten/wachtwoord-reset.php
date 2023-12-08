@@ -5,9 +5,9 @@ use PHPMailer\PHPMailer\Exception;
 require '../vendor/autoload.php';
 
 $email = $_POST["email"];
-$token = bin2hex(random_bytes(16));
+$token = bin2hex(random_bytes(16)); //random_bytes genereed een random token
 $token_hash = hash("sha256", $token);
-$expiry = date("Y-m-d H:i:s", time() + 60 * 30); //
+$expiry = date("Y-m-d H:i:s", time() + 60 * 30); //database wordt bijgewerkt met het nieuwe resettoken 
 $database = require __DIR__ . "../../gereedschap/database.php";
 $sql = "UPDATE gebruiker
         SET reset_token_hash = ?,
@@ -27,8 +27,8 @@ if ($stmt->execute()) {
         $mail->Host = 'smtp.mailtrap.io';
         $mail->SMTPAuth = true;
         $mail->Port = 2525;
-        $mail->Username = 'b194d2521afbbf'; // Replace with your Mailtrap username
-        $mail->Password = '8d0acdb6c1a21b'; // Replace with your Mailtrap password
+        $mail->Username = 'b194d2521afbbf'; 
+        $mail->Password = '8d0acdb6c1a21b'; 
         var_dump($email);
         // Recipients
         $mail->setFrom('rijschoolanaarb@outlook.com', 'Your Name');
@@ -40,7 +40,7 @@ if ($stmt->execute()) {
         $mail->Body    ="<a href='http://localhost/examen/wachtwoord_vergeten/nieuw_wachtwoord.php?token=$token'>here</a> 
         to reset your password.";
     
- 
+        //verzend email met link  naar het resetten
         $mail->send();
         echo 'E-mail reset instructions have been sent!';
     } catch (Exception $e) {
@@ -48,5 +48,5 @@ if ($stmt->execute()) {
     }
 } else {
     echo "An error occurred while updating the database.";
-}
+}//foutmelding
 ?>
